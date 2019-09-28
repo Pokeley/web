@@ -1,6 +1,11 @@
+# Renderer for Extracted Data
 This is workspace for CITE202 class, especially for Web UI (so far).
 
 Started Date: 9/28/2019
 Publisher: Luke Kim
 
 CITE202 is a class held by Creative IT Engineering(CITE), POSTECH, S.Korea.
+
+Things Done So Far:
+
+Run 'server.js' then enter the link 'localhost:3000'
