@@ -1,0 +1,33 @@
+/******
+*******
+JSON format for labeled product web pages
+
+Each JSON object represents a product web page. A web page is identified by the following properties: id_warc, id_self, GTIN, MPN, url, category_google, category_GS1, category_page, 
+normalized_product_name, product-name, product-description, title_atts, desc_atts, table_atts, atts_map. 
+In the comments of the properties you can find detailed description of their usage
+
+USAGE:
+The JSON *_atts properties contain the overall set of the prduct features found, in their respective struvtural units, in the "Attribute-Name":"Attribute-Value" format.   
+********
+*******/
+{
+id_warc:213123Warc, //the id of the warc file where the original web page is archived; usage: identifier for download of the original page 
+id_self: 2123123Self, //self id of the JSON object; usage: unique identifier
+GTIN:12563438, //the global trade item number (if found in the Microdata markup)
+MPN:32534, //the manufacturers Part Number (if found in the Microdata markup)
+url: http://example.com/product/3425646, // the url of the original web page
+category_google:, //a google category identifier (if found in the Microdata markup); usage: can be used to learn model for product categorisation
+category_GS1:, //a google category identifier at level 1 (if found in the Microdata markup); usage: can be used to learn model for product categorisation
+category_page:, “Electronics / Mobile Phones” //mapping the category of the product to the taxonomy of the product catalog
+normalized_product_name:”Samsung Galaxy S4 GT-19505”, //a normalized product name which can be used for identifying counterparts in the product catolg
+product-name:“New Samsung Galxy S4 GT-19505 16GB 5.0 inches Android Smartphone with 2-Year Sprint Contract - White Frost”, //the whole product name as extracted from the Microdata 
+product-description:“Long Description….”, //the whole product description as extracted from the Microdata 
+title_atts:[
+tagline:“New”,brand:”Samsung”:, phone_type:“Galaxy”, phone_type:“S4”, product code:“GT-19505”, memory:”16GB”,size:”5.0”,size:“inches”, 
+compatible_computer_operating_system:”Android”, tagline:“Smartphone”, tagline:“with” tagline:“2-Year”, phone_carrier:“Sprint”, 
+tagline:“Contract” “tagline”:”-”,”color”:”White”,”color”:”Frost”], //labelled product features found in the product name
+desc_atts:[same as for the title”], //labelled product features found in the product description
+table_atts:[Display-size: “5 inch”, OS: “Android Jelly Bean”, Memory-size: “16GB”, Camera: “2MP”, Battery-type:”Li-Ion 2600 mAh”]//labelled product features found in all specification tables,
+list_atts:[Display-size: “5 inch”, OS: “Android Jelly Bean”, Memory-size: “16GB”, Camera: “2MP”, Battery-type:”Li-Ion 2600 mAh”]//labelled product features found in all specification lists,
+atts_map:[size: “Display-size”, memory: “Memory-size”, compatible_computer_operating_system: “OS”]//mappings of product features to a single schema (one used in the product catalog)
+}
