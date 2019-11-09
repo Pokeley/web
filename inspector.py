@@ -24,7 +24,7 @@ def highlighter(html_file, json_file):
         ele_attr = tree.xpath(attrib["xpath"])
         ele_attr[0].set("style", "background-color:magenta")
 
-    tree.write_c14n(html_file[:-5] + "_highlighted.html")
+    tree.write_c14n(util.VIEW_DEFAULT+ html_file[:-5] + "_highlighted.html")
 
     # try:
     # except:
